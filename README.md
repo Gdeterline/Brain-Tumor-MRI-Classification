@@ -66,3 +66,33 @@ I’ll train a **GAN (e.g., DCGAN or CycleGAN)** on real MRI scans that we have 
 Once I’ve augmented the dataset, I’ll retrain the CNN and evaluate it again.
 
 ---  
+
+### Essential models for image classification
+
+Most common CNN models among which we can choose the adapted model for our project:
+
+| Model                | Year  | Parameters (Millions) | Pretrained Available? | Recommended Dataset Size | Input Image Format |
+|----------------------|------|---------------------|----------------------|-------------------------|--------------------|
+| **LeNet-5**         | 1998 | 0.06                | No                   | ~10K+ (e.g., MNIST)    | 32×32 (Grayscale)  |
+| **AlexNet**         | 2012 | 60                  | Yes (ImageNet)       | ~1M+ (e.g., ImageNet)  | 227×227 (RGB)      |
+| **VGG-16**          | 2014 | 138                 | Yes (ImageNet)       | ~1M+ (e.g., ImageNet)  | 224×224 (RGB)      |
+| **VGG-19**          | 2014 | 144                 | Yes (ImageNet)       | ~1M+ (e.g., ImageNet)  | 224×224 (RGB)      |
+| **GoogLeNet (Inception v1)** | 2014 | 5 | Yes (ImageNet) | ~500K+ | 224×224 (RGB) |
+| **Inception v3**    | 2015 | 23.8                | Yes (ImageNet)       | ~1M+                     | 299×299 (RGB)      |
+| **ResNet-18**       | 2015 | 11.7                | Yes (ImageNet)       | ~500K+                  | 224×224 (RGB)      |
+| **ResNet-50**       | 2015 | 25.6                | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+| **ResNet-101**      | 2015 | 44.5                | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+| **ResNet-152**      | 2015 | 60.2                | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+| **DenseNet-121**    | 2017 | 8.0                 | Yes (ImageNet)       | ~500K+                   | 224×224 (RGB)      |
+| **DenseNet-169**    | 2017 | 14.3                | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+| **DenseNet-201**    | 2017 | 20.0                | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+| **MobileNetV1**     | 2017 | 4.2                 | Yes (ImageNet)       | ~100K+                   | 224×224 (RGB)      |
+| **MobileNetV2**     | 2018 | 3.4                 | Yes (ImageNet)       | ~100K+                   | 224×224 (RGB)      |
+| **EfficientNet-B0** | 2019 | 5.3                 | Yes (ImageNet)       | ~100K+                   | 224×224 (RGB)      |
+| **EfficientNet-B7** | 2019 | 66                  | Yes (ImageNet)       | ~1M+                     | 600×600 (RGB)      |
+| **ConvNeXt-Tiny**   | 2022 | 28                  | Yes (ImageNet)       | ~1M+                     | 224×224 (RGB)      |
+
+In our case, we can start with a simple model we build ourselves. Then, we will choose a more complex model to continue with. But since I do not have a GPU, the models can't be too complex to train. This restricts us to models that do not have too many parameters: LeNet-5, MobileNetV1, MobileNetV2, EfficientNet-B0.
+
+Apart from LeNet-5, the models all expect an input image size of 224×224x3. We will therefore need to convert our images to this format before training the models.
+
