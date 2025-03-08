@@ -47,7 +47,7 @@ In this project, I’ll start with a simple architecture and then perhaps experi
 Key decisions include:  
 - Choosing convolutional layers for feature extraction.  
 - Using dropout and pooling layers to improve generalization.  
-- Selecting an optimizer (like Adam) and a loss function (binary cross-entropy).  
+- Selecting an optimizer (like Adam) and a loss function (categorical cross-entropy).  
 - Compiling the model and training it on the training set.
 
 ### **4. Evaluating Performance**  
